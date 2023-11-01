@@ -1,6 +1,3 @@
-/* import lion from '../assets/images/lion.jpg'
-import toucan from '../assets/images/toucan.jpg' */
-
 const Menu = () => {
     return (
         <div className="menu-container">

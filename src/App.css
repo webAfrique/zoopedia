@@ -1,0 +1,100 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+ */
+body {
+  background-color: #333;
+}
+header {
+  width: 100%;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+  margin: 0 auto;
+}
+nav a {
+  text-decoration: none;
+  font-weight: 100;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
+main {
+  width: 60%;
+  height: 60vh;
+  margin: 10vh auto;
+}
+.menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+.menu {
+  width: 49%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(100%);
+}
+.menu:hover {
+  box-shadow: rgba(247, 243, 243, 0.35) 0px 5px 15px;
+}
+.menu:nth-child(1) {
+  background-image: url("https://images.pexels.com/photos/12004890/pexels-photo-12004890.jpeg?cs=srgb&dl=pexels-ahmed-galal-12004890.jpg&fm=jpg");
+}
+.menu:nth-child(2) {
+  background-image: url("https://media.istockphoto.com/id/495292220/photo/colorful-cute-toucan-tropical-bird-in-brazilian-amazon-blurred-background.jpg?s=612x612&w=0&k=20&c=UUgfaSISnRJOGQfmzsUQyWIo_RFWHe3JPBmO3K3E6LA=");
+}
+footer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+footer small {
+  text-align: center;
+}

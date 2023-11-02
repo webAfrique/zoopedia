@@ -1,5 +1,6 @@
 import { useState } from 'react'
-const Card = () => {
+
+const Card = ({ name }) => {
     const [ likes, setLikes ] = useState(0)
     const [ dislikes, setDislikes ] = useState(0)
     const [ isLiked, setIsLiked ] = useState(false)
@@ -28,23 +29,28 @@ const Card = () => {
             setIsDisliked(false)
         }
     }
+    const randomNumber = (min, max) => {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
     return (
         <div className="card">
-            <div className="card-image"></div>
-            <p>Animal name</p>
+            <img src={`https://source.unsplash.com/400x400/?${name}`} alt="unsplash random image" />
+            <p>{name}</p>
             <div className="card-buttons">
                 <div className="reaction">
                     <div className="thumbs-up">
                         <span onClick={handleLike} className="material-symbols-outlined">
                             thumb_up
                         </span>
-                        <small className="thumbs-up-count">{likes ? likes : null}</small>
+                        <small className="thumbs-up-count">{() => randomNumber(0, 100)}</small>
                     </div>
                     <div className="thumbs-down">
                         <span onClick={handleDislike} className="material-symbols-outlined thumbs-down">
                             thumb_down
                         </span>
-                        <small className="thumbs-down-count">{dislikes ? dislikes : null}</small>
+                        <small className="thumbs-down-count">{() => randomNumber(0, 100)}</small>
                     </div>
                 </div>
                 <span className="material-symbols-outlined close-btn">

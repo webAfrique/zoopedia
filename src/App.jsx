@@ -2,7 +2,9 @@
 import Header from './components/Header'
 import Footer from './components/Footer'
 //import Menu from './components/menu'
-import Display from './components/Display'
+import Gallery from './components/Gallery'
+//import Search from './components/Search'
+import { animals, birds } from './animalsList'
 import './App.css'
 
 function App() {
@@ -12,7 +14,7 @@ function App() {
     <>
       <Header />
       <main>
-        <Display />
+        <Gallery collection={animals}/>
       </main>
       <Footer/>
     </>

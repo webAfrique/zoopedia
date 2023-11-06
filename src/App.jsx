@@ -28,8 +28,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/animals" element={<Gallery collection={animals} />} />
-        <Route path="/birds" element={<Gallery collection={birds} />} />
+        <Route path="/animals" element={<Gallery collection={animals} collectionName={'animals'}/>} />
+        <Route path="/birds" element={<Gallery collection={birds} collectionName={'birds'}/>} />
         
       </Routes>
       <Footer />

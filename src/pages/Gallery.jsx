@@ -26,7 +26,7 @@ const Gallery = ({ collection, collectionName }) => {
         })
         searchResults.length > 0 ? setList(searchResults) : setList(null)
     }
-    const handleDelete = (event) => {
+    const handleBackspace = (event) => {
       const key = event.which || event.key || event.code
       if( key === 8 || key === 'Backspace') {
         if(event.target.value === '') setList(collection)
@@ -39,7 +39,7 @@ const Gallery = ({ collection, collectionName }) => {
     }
     return (
         <>
-            <div className="search" onInput={runSearch} onKeyDown={handleDelete}>
+            <div className="search" onInput={runSearch} onKeyDown={handleBackspace}>
             <span className="material-symbols-outlined search-icon">
                 search
             </span>

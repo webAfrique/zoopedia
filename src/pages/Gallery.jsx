@@ -1,23 +1,15 @@
 import { useState } from 'react'
 import Card from "./Card"
 
-//import Search from "./Search"
-
-/* const Search = ({ collection, collectionName}) => {
-    
-
-    return (
-        <div className="search">
-            <span className="material-symbols-outlined search-icon">
-                search
-            </span>
-            <input type="text" placeholder={`search ${collectionName}`}/>
-        </div>
-    )
-} */
 
 const Gallery = ({ collection, collectionName }) => {
-    const [ list, setList ] = useState(collection)
+    const [ list, setList ] = useState([...collection])
+
+    const deleteCard = (name) => {
+        const cardIndex = list.findIndex(animal => animal.name === name)
+        const newList = list.toSpliced(cardIndex, 1)
+        setList(newList)
+    }
 
     const runSearch = (event) => {
         let searchString = event.target.value.toLowerCase()
@@ -50,7 +42,7 @@ const Gallery = ({ collection, collectionName }) => {
                 { list 
                     ? 
                 list.map(item => {
-                    return <Card key={item.name} name={item.name}/>
+                    return <Card key={item.name} name={item.name} deleteCard={deleteCard}/>
                 })
                     :
                 <h1 className="not-found">Not found!</h1>

@@ -61,7 +61,7 @@ main.about {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* filter: grayscale(100%); */
+  filter: grayscale(100%); 
 }
 .menu-image:hover {
   outline: 1px solid white;
@@ -112,7 +112,7 @@ main.about {
   width: 100%;
   height: 70%;
   background-size: cover;
-  /* filter: grayscale(100%); */
+  filter: grayscale(100%); 
 }
 .card p {
   text-align: center;

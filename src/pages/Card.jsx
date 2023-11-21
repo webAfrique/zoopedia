@@ -1,62 +1,64 @@
 import { useState } from "react";
 
-const randomNumber = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-};
-const getInfo = async () => {
-  try {
-    const response = await fetch("/wiki");
-    const data = await response.json();
-    console.log(data);
-    /*  const pagesObj = data.query.pages;
-    console.log(pagesObj)
-    const responsePage = Object.keys(pagesObj)[0];
-    const summary = pagesObj[responsePage].extract; */
-    //console.log(summary);
-  } catch (error) {
-    console.log("error dey inside", error.message);
-  }
-};
-getInfo();
-
-const Card = ({ name, deleteCard }) => {
-  const [likes, setLikes] = useState(randomNumber(0, 100));
-  //const [ info, setInfo ] = useState('')
-  const [dislikes, setDislikes] = useState(randomNumber(0, 100));
+const Card = ({ name, likes, dislikes, deleteCard }) => {
+  const [likesCount, setLikesCount] = useState(likes);
+  const [info, setInfo] = useState("");
+  const [dislikesCount, setDislikesCount] = useState(dislikes);
   const [isLiked, setIsLiked] = useState(false);
   const [isDisliked, setIsDisliked] = useState(false);
 
+  const fetchInfo = async () => {
+    try {
+      const response = await fetch(
+        `https://en.wikipedia.org/api/rest_v1/page/summary/${name}`
+      );
+      const data = await response.json();
+      const extract = data.extract;
+      const offset = extract.indexOf(".");
+      const summary = extract.slice(0, offset + 1);
+      extract ? setInfo(summary) : setInfo("no summary");
+    } catch (error) {
+      console.log("error dey inside", error.message);
+    }
+  };
+
   const handleLike = () => {
     if (isLiked === false) {
-      setLikes(likes + 1);
+      setLikesCount(likesCount + 1);
       setIsLiked(true);
     } else {
-      setLikes(likes - 1);
+      setLikesCount(likesCount - 1);
       setIsLiked(false);
     }
   };
   const handleDislike = () => {
     if (isDisliked === false) {
-      setDislikes(dislikes + 1);
+      setDislikesCount(dislikesCount + 1);
       setIsDisliked(true);
     } else {
-      setDislikes(dislikes - 1);
+      setDislikesCount(dislikesCount - 1);
       setIsDisliked(false);
     }
   };
 
   return (
-    <div className="card">
-      <p>{name}</p>
+    <div
+      onMouseOver={fetchInfo}
+      onMouseLeave={() => setInfo("")}
+      className="card"
+    >
+      <img
+        src={`https://source.unsplash.com/400x400/?${name}`}
+        alt="unsplash random image"
+      />
+      {info === "" ? <p>{name}</p> : <small>{info}</small>}
       <div className="card-buttons">
         <div className="reaction">
           <div className="thumbs-up">
             <span onClick={handleLike} className="material-symbols-outlined">
               thumb_up
             </span>
-            <small className="thumbs-up-count">{likes}</small>
+            <small className="thumbs-up-count">{likesCount}</small>
           </div>
           <div className="thumbs-down">
             <span
@@ -65,7 +67,7 @@ const Card = ({ name, deleteCard }) => {
             >
               thumb_down
             </span>
-            <small className="thumbs-down-count">{dislikes}</small>
+            <small className="thumbs-down-count">{dislikesCount}</small>
           </div>
         </div>
         <span

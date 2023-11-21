@@ -24,7 +24,9 @@ const Gallery = ({ collection, collectionName }) => {
       let searchResults = collection.filter((item) => {
         return item.name.toLowerCase().includes(searchString);
       });
-      setList(searchResults);
+      searchResults.length > 0
+        ? setList(searchResults)
+        : setList([...collection]);
     }
   };
   return (
@@ -38,7 +40,13 @@ const Gallery = ({ collection, collectionName }) => {
         {list ? (
           list.map((item) => {
             return (
-              <Card key={item.name} name={item.name} deleteCard={deleteCard} />
+              <Card
+                key={item.id}
+                name={item.name}
+                likes={item.likes}
+                dislikes={item.dislikes}
+                deleteCard={deleteCard}
+              />
             );
           })
         ) : (

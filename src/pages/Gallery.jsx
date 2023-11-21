@@ -1,7 +1,12 @@
 import { useState } from "react";
-import Card from "./Card";
+import { useParams } from "react-router-dom";
 
-const Gallery = ({ collection, collectionName }) => {
+import Card from "./Card";
+import collections from "../animalsList";
+
+const Gallery = () => {
+  let { collectionName } = useParams();
+  const collection = collections[collectionName];
   const [list, setList] = useState([...collection]);
 
   const deleteCard = (name) => {

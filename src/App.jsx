@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
 import About from "./pages/About";
 import Footer from "./pages/Footer";
-import { animals, birds } from "./animalsList";
+import collections from "./animalsList";
 import "./App.css";
 
 const Header = () => {
@@ -13,10 +13,14 @@ const Header = () => {
         <Link to="/">Home</Link>
       </h2>
       <h2>
-        <Link to="/animals">Animals {`(${animals.length})`}</Link>
+        <Link to="/collection/animals">
+          Animals {`(${collections.animals.length})`}
+        </Link>
       </h2>
       <h2>
-        <Link to="/birds">Birds {`(${birds.length})`}</Link>
+        <Link to="/collection/birds">
+          Birds {`(${collections.birds.length})`}
+        </Link>
       </h2>
       <h2>
         <Link to="/about">About</Link>
@@ -31,14 +35,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route
-          path="/animals"
-          element={<Gallery collection={animals} collectionName={"animals"} />}
-        />
-        <Route
-          path="/birds"
-          element={<Gallery collection={birds} collectionName={"birds"} />}
-        />
+        <Route path="/collection/:collectionName" element={<Gallery />} />
         <Route path="/about" element={<About />} />
       </Routes>
       <Footer />

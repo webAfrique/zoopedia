@@ -118,6 +118,9 @@ main.about {
   text-align: center;
   margin-bottom: 0;
 }
+.card small {
+  font-size: .6rem;
+}
 .card-buttons {
   width: 90%;
   display: flex;

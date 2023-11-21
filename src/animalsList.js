@@ -1,4 +1,4 @@
-export const animals = [
+const animals = [
   {"id":0,"name":"alligator","likes":57,"dislikes":5},
   {"id":1,"name":"alpaca","likes":16,"dislikes":3},
   {"id":2,"name":"ant","likes":47,"dislikes":3},
@@ -120,7 +120,7 @@ export const animals = [
   {"id":118,"name":"zebra","likes":6,"dislikes":2}
 ]
 
-export const birds = [
+const birds = [
   {"id":0,"name":"Sparrow","likes":74,"dislikes":2},
   {"id":1,"name":"Starling","likes":100,"dislikes":3},
   {"id":2,"name":"Pigeon","likes":99,"dislikes":2},
@@ -162,4 +162,6 @@ export const birds = [
   {"id":38,"name":"Cormorant","likes":79,"dislikes":3},
   {"id":39,"name":"Hawk","likes":34,"dislikes":5}
 ]
+
+export  default { animals, birds }
 

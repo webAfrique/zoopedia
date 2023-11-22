@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
+import Article from "./pages/Article";
 import About from "./pages/About";
 import Footer from "./pages/Footer";
 import collections from "./animalsList";
@@ -36,6 +37,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/collection/:collectionName" element={<Gallery />} />
+        <Route path="/article/:animalName" element={<Article />} />
         <Route path="/about" element={<About />} />
       </Routes>
       <Footer />

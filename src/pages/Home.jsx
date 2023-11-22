@@ -1,17 +1,10 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Home = () => {
-  const navigate = useNavigate();
   return (
     <main className="home">
-      <div
-        onClick={() => navigate("collection/animals")}
-        className="menu-image"
-      ></div>
-      <div
-        onClick={() => navigate("collection/birds")}
-        className="menu-image"
-      ></div>
+      <Link to="/collection/animals" className="menu-image" />
+      <Link to="/collection/birds" className="menu-image" />
     </main>
   );
 };

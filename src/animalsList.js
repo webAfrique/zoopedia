@@ -163,5 +163,5 @@ const birds = [
   {"id":39,"name":"Hawk","likes":34,"dislikes":5}
 ]
 
-export  default { animals, birds }
+export default { animals, birds }
 

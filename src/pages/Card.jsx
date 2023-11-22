@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Card = ({ name, likes, dislikes, deleteCard }) => {
   const [likesCount, setLikesCount] = useState(likes);
@@ -6,6 +7,8 @@ const Card = ({ name, likes, dislikes, deleteCard }) => {
   const [dislikesCount, setDislikesCount] = useState(dislikes);
   const [isLiked, setIsLiked] = useState(false);
   const [isDisliked, setIsDisliked] = useState(false);
+
+  //const navigate = useNavigate();
 
   const fetchInfo = async () => {
     try {
@@ -51,7 +54,15 @@ const Card = ({ name, likes, dislikes, deleteCard }) => {
         src={`https://source.unsplash.com/400x400/?${name}`}
         alt="unsplash random image"
       />
-      {info === "" ? <p>{name}</p> : <small>{info}</small>}
+
+      {info === "" ? (
+        <p>{name}</p>
+      ) : (
+        <>
+          <small className="info">{info}</small>
+          <Link to={`/article/${name}`}>See more</Link>
+        </>
+      )}
       <div className="card-buttons">
         <div className="reaction">
           <div className="thumbs-up">
@@ -82,4 +93,12 @@ const Card = ({ name, likes, dislikes, deleteCard }) => {
 };
 
 export default Card;
-//<img src={`https://source.unsplash.com/400x400/?${name}`} alt="unsplash random image" />
+
+/* <img
+        src={`https://source.unsplash.com/400x400/?${name}`}
+        alt="unsplash random image"
+      />
+
+      onClick={() => navigate(`/article/${name}`)}
+      
+*/

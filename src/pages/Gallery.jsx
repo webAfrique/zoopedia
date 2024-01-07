@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import Card from "./Card";
@@ -7,7 +7,11 @@ import collections from "../animalsList";
 const Gallery = () => {
   let { collectionName } = useParams();
   const collection = collections[collectionName];
-  const [list, setList] = useState([...collection]);
+  const [list, setList] = useState([]);
+
+  useEffect(() => {
+    setList([...collection]);
+  }, [collection]);
 
   const deleteCard = (name) => {
     const newList = list.filter((animal) => animal.name !== name);

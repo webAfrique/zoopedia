@@ -13,7 +13,7 @@ const Header = ({ collections }) => {
         </h2>
         <h2>
           <Link to="/collection/animals">
-            Animals {`(${collections.animals.length})`}
+            Animals {`(${collections.mammals.length})`}
           </Link>
         </h2>
         <h2>

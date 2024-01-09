@@ -181,8 +181,6 @@ const reptiles = [
   {"id":20,"name":"turtle","likes":4,"dislikes":1},
   {"id":21,"name":"viper","likes":3,"dislikes":3},
   {"id":22,"name":"water-snake","likes":2,"dislikes":4},
-  {"id":23,"name":"frog","likes":1,"dislikes":2},
-  {"id":24,"name":"toad","likes":4,"dislikes":2}
 ]
 
 

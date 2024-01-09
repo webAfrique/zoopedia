@@ -12,13 +12,28 @@ const Header = ({ collections }) => {
           <Link to="/">Home</Link>
         </h2>
         <h2>
-          <Link to="/collection/animals">
-            Animals {`(${collections.mammals.length})`}
+          <Link to="/collection/mammals">
+            Mammals {`(${collections.mammals.length})`}
           </Link>
         </h2>
         <h2>
           <Link to="/collection/birds">
             Birds {`(${collections.birds.length})`}
+          </Link>
+        </h2>
+        <h2>
+          <Link to="/collection/fish">
+            Fish {`(${collections.fish.length})`}
+          </Link>
+        </h2>
+        <h2>
+          <Link to="/collection/reptiles">
+            Reptiles {`(${collections.reptiles.length})`}
+          </Link>
+        </h2>
+        <h2>
+          <Link to="/collection/insects">
+            Insects {`(${collections.insects.length})`}
           </Link>
         </h2>
         <h2>

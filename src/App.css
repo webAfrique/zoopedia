@@ -10,29 +10,17 @@ header {
   width: 100%;
 }
 header h1 {
+  font-size: 3.5rem;
+  font-weight: 100;
+  text-align: center;
   color: white;
   margin: 0;
   padding: 0;
-  font-weight: 100;
-  text-align: center;
-}
-.zoo-text {
-  font-size: 3.5rem;
-  font-size: 900;
-  margin-right: 0;
-}
-.zoo-text span.square-dot {
-  font-size: 1.5rem;
-  margin: 0 10px 0 -10px;
-}
-.monochrome-text  {
-  font-size: 2rem;
-  letter-spacing: 2px;
 }
 nav {
   display: flex;
   justify-content: space-around;
-  width: 40%;
+  width: 80%;
   margin: 0 auto;
 }
 nav a {

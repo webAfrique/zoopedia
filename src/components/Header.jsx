@@ -3,10 +3,7 @@ import { Link } from "react-router-dom";
 const Header = ({ collections }) => {
   return (
     <header>
-      <h1 className="zoo-text">
-        zoopedia <span className="square-dot">&#9632;</span>
-        <span className="monochrome-text">monochrome</span>
-      </h1>
+      <h1>zoopedia</h1>
       <nav>
         <h2>
           <Link to="/">Home</Link>

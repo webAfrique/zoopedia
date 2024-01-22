@@ -1,8 +1,11 @@
-# zoo# React + Vite
+# zoopedia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a simple wiki application that displays articles and galleries of collections of creatures from five sub-divisions of the animal kingdom.
 
-Currently, two official plugins are available:
+Info:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- It is a react project created with vite.
+
+- Random images used are obtained from https://source.unsplash.com/
+
+- Article summaries are from https://en.wikipedia.org/api/rest_v1/page/summary/

@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 
 const Card = ({ name, likes, dislikes, deleteCard }) => {
   const [likesCount, setLikesCount] = useState(likes);
-  const [info, setInfo] = useState("");
+  //const [info, setInfo] = useState("");
   const [dislikesCount, setDislikesCount] = useState(dislikes);
   const [isLiked, setIsLiked] = useState(false);
   const [isDisliked, setIsDisliked] = useState(false);
 
   //const navigate = useNavigate();
 
-  const fetchInfo = async () => {
+  /*  const fetchInfo = async () => {
     try {
       const response = await fetch(
         `https://en.wikipedia.org/api/rest_v1/page/summary/${name}`
@@ -23,7 +23,7 @@ const Card = ({ name, likes, dislikes, deleteCard }) => {
     } catch (error) {
       console.log("error dey inside", error.message);
     }
-  };
+  }; */
 
   const handleLike = () => {
     if (isLiked === false) {
@@ -45,24 +45,14 @@ const Card = ({ name, likes, dislikes, deleteCard }) => {
   };
 
   return (
-    <div
-      onMouseOver={fetchInfo}
-      onMouseLeave={() => setInfo("")}
-      className="card"
-    >
+    <div className="card">
       <img
         src={`https://source.unsplash.com/400x400/?${name}`}
         alt="unsplash random image"
       />
 
-      {info === "" ? (
-        <p>{name}</p>
-      ) : (
-        <>
-          <small className="info">{info}</small>
-          <Link to={`/article/${name}`}>See more</Link>
-        </>
-      )}
+      <Link to={`/article/${name}`}>{name}</Link>
+
       <div className="card-buttons">
         <div className="reaction">
           <div className="thumbs-up">

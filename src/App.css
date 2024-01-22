@@ -90,7 +90,6 @@ main.about {
 .about-image {
   width: 50%;
   height: 100%;
-  background-image: url("./images/me.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   filter: grayscale(100%);

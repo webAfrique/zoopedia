@@ -95,6 +95,9 @@ main.about {
   background-repeat: no-repeat;
   filter: grayscale(100%);
 }
+.about-image:hover {
+  filter: grayscale(0);
+}
 .about-text {
   width: 50%;
   height: 100%;

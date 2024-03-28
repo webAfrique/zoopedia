@@ -1,6 +1,6 @@
 # zoopedia
 
-This project is a simple wiki application that displays articles and galleries of collections of creatures from five sub-divisions of the animal kingdom.
+This project is a simple wiki application that displays articles and galleries of collections of creatures from five sub-divisions of the animal kingdom. It is not yet optimised for mobile viewing.
 
 Info:
 
